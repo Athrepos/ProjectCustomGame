@@ -1,0 +1,34 @@
+<DialoguesCollection>
+	<dialogues>
+		<dialog>
+			<id>1</id>
+			<message>Quanto é 1 + 1?</message>
+			<NextDialog>
+				<value>2</value>
+				<value>3</value>
+			</NextDialog>
+		</dialog>
+		<dialog>
+			<id>2</id>
+			<message>a) 1 + 1 é 2</message>
+			<NextDialog>
+				<value>4</value>
+			</NextDialog>
+		</dialog>
+		<dialog>
+			<id>3</id>
+			<message>b) 1 + 1 é 3</message>
+			<NextDialog>
+				<value>5</value>
+			</NextDialog>
+		</dialog>
+		<dialog>
+			<id>4</id>
+			<message>Resposta Certa !</message>
+		</dialog>
+		<dialog>
+			<id>5</id>
+			<message>Resposta Errada !</message>
+		</dialog>
+	</dialogues>
+</DialoguesCollection>

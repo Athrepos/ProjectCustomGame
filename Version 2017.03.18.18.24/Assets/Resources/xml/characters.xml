@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+<CharactersCollection>
+	<Characters>
+		<Character>
+			<Id>jailson</Id>
+			<Name>Jailson</Name>
+			<CharacterImage>jailson</CharacterImage>
+		</Character>
+		<Character>
+			<Id>temer</Id>
+			<Name>Temer</Name>
+			<CharacterImage>temer</CharacterImage>
+		</Character>
+	</Characters>
+</CharactersCollection>

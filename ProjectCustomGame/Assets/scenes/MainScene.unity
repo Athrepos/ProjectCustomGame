@@ -1380,7 +1380,6 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1763003872b354e45a104cd0282ddf74, type: 2}
-  m_RootGameObject: {fileID: 1368324634}
   m_IsPrefabParent: 0
 --- !u!1 &1332939375
 GameObject:
@@ -1807,8 +1806,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -100.6, y: -20.688}
-  m_SizeDelta: {x: 164, y: 408.38}
+  m_AnchoredPosition: {x: -224.3, y: -20.688}
+  m_SizeDelta: {x: 408, y: 408}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1402029408
 MonoBehaviour:

@@ -45,6 +45,7 @@
 				<value>pergunta</value>
 			</NextDialog>
 			<IdCharacter>temer</IdCharacter>
+			<IdScene>scene1</IdScene>
 		</Dialog>
 
 		<Dialog>

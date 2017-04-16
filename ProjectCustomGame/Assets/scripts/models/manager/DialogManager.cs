@@ -40,6 +40,8 @@ namespace NatanielSoaresRodrigues.ProjectCustomGame.Models.Manager
 			private set;
 		}
 
+		string impact;
+
 
 		event ShowDialogResponseHandler showDialogResponse;
 
@@ -77,6 +79,15 @@ namespace NatanielSoaresRodrigues.ProjectCustomGame.Models.Manager
 					int i = 0;
 					foreach (string dialogId in currentDialog.NextDialog) {
 						Dialog nxtDialog = findMyObject (dialogId) as Dialog;
+
+						if (nxtDialog.Id == impact) {
+							//select impact
+							DialogOptions = null;
+							impact = null;
+							selectCurrent (nxtDialog.Id);
+							return;
+						}	
+
 						DialogOptions [i] = nxtDialog;
 
 						i++;
@@ -120,6 +131,9 @@ namespace NatanielSoaresRodrigues.ProjectCustomGame.Models.Manager
 
 				}
 
+				if (!String.IsNullOrEmpty (DialogOptions [opt].Impact))
+					impact = DialogOptions [opt].Impact;
+
 				selectCurrent (DialogOptions [opt].NextDialog[0]);
 			}
 		}
@@ -128,7 +142,11 @@ namespace NatanielSoaresRodrigues.ProjectCustomGame.Models.Manager
 		{
 			base.selectCurrent (id);
 			DialogOptions = null;
-			OnShowDialogResponse (new DialogEventArgs (current as Dialog)); //call the event to show the message
+
+			if (CurrentDialog != null && !String.IsNullOrEmpty (CurrentDialog.Impact))
+				impact = CurrentDialog.Impact;
+			
+			OnShowDialogResponse (new DialogEventArgs (CurrentDialog)); //call the event to show the message
 		}
 
 

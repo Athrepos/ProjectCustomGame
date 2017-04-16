@@ -35,10 +35,7 @@ namespace NatanielSoaresRodrigues.ProjectCustomGame.Objs
 		{ 
 			get
 			{ 
-				
-				
 				return nextDialog;
-
 			} 
 			set
 			{ 
@@ -52,6 +49,11 @@ namespace NatanielSoaresRodrigues.ProjectCustomGame.Objs
 		}
 
 		public string IdScene {
+			get;
+			set;
+		}
+
+		public string Impact {
 			get;
 			set;
 		}

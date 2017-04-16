@@ -60,9 +60,76 @@
 			<Id>respostaEstranha</Id>
 			<Message>Kkk eae men! </Message>
 			<NextDialog>
-				<value>pergunta</value>
+				<value>impacto1</value>
+				<value>impacto2</value>
+				<value>impacto3</value>
 			</NextDialog>
 			<IdCharacter>jailson</IdCharacter>
+		</Dialog>
+
+		<Dialog>
+			<Id>impacto1</Id>
+			<Message>resposta 1</Message>
+			<NextDialog>
+				<value>intervalo</value>
+			</NextDialog>
+			<Impact>1</Impact>
+		</Dialog>
+
+		<Dialog>
+			<Id>impacto2</Id>
+			<Message>resposta 2</Message>
+			<NextDialog>
+				<value>intervalo</value>
+			</NextDialog>
+			<Impact>2</Impact>
+		</Dialog>
+
+		<Dialog>
+			<Id>impacto3</Id>
+			<Message>resposta 3</Message>
+			<NextDialog>
+				<value>intervalo</value>
+			</NextDialog>
+			<Impact>3</Impact>
+		</Dialog>
+
+		<Dialog>
+			<Id>intervalo</Id>
+			<Message>E Agora! </Message>
+			<NextDialog>
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+			</NextDialog>
+			<IdCharacter>temer</IdCharacter>
+			<IdScene>scene1</IdScene>
+
+		</Dialog>
+
+		<Dialog>
+			<Id>1</Id>
+			<Message>resultado 1</Message>
+			<IdCharacter>jailson</IdCharacter>
+			<NextDialog>
+				<value>pergunta</value>
+			</NextDialog>
+		</Dialog>
+
+		<Dialog>
+			<Id>2</Id>
+			<Message>resultado 2</Message>
+			<NextDialog>
+				<value>pergunta</value>
+			</NextDialog>
+		</Dialog>
+
+		<Dialog>
+			<Id>3</Id>
+			<Message>resultado 3</Message>
+			<NextDialog>
+				<value>pergunta</value>
+			</NextDialog>
 		</Dialog>
 
 	</Dialogues>

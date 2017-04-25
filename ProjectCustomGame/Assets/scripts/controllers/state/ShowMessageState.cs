@@ -53,8 +53,7 @@ namespace NatanielSoaresRodrigues.ProjectCustomGame.Controllers.State
 					Button btn = main.optionButtons [i];
 					btn.gameObject.SetActive (true);
 
-					Text txtBtn = btn.GetComponentInChildren<Text> ();
-					txtBtn.text = "\t"+d.Message;
+					main.textButtons[i].text = "\t"+d.Message;
 
 					Debug.Log (d.Message);
 					i++;

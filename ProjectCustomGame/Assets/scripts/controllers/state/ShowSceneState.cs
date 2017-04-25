@@ -44,10 +44,10 @@ namespace NatanielSoaresRodrigues.ProjectCustomGame.Controllers.State
 				
 			if (texture != null) {
 				//	main.backgroundImage.SetActive(true);
-				main.backgroundImage.GetComponent<Renderer> ().material.mainTexture = texture;
-				main.backgroundImage.GetComponent<AnimationEventTrigger> ().finishAnim += finishSceneAnimation;
-				main.backgroundImage.GetComponent<Animator> ().enabled = true;
-				main.backgroundImage.GetComponent<Animator> ().Play ("sceneAnimationIn");
+				main.backgroundImageRenderer.material.mainTexture = texture;
+				main.backgroundImageAnimatorEventTrigger.finishAnim += finishSceneAnimation;
+				main.backgroundImageAnimator.enabled = true;
+				main.backgroundImageAnimator.Play ("sceneAnimationIn");
 			} else {
 				OnFinishState (new EventArgs ());
 			}
@@ -62,7 +62,7 @@ namespace NatanielSoaresRodrigues.ProjectCustomGame.Controllers.State
 
 		public override void nextState (MainController main)
 		{
-			main.backgroundImage.GetComponent<AnimationEventTrigger>().finishAnim -= finishSceneAnimation; //you do not want to remove this line, trust me or errors will pop up
+			main.backgroundImageAnimatorEventTrigger.finishAnim -= finishSceneAnimation; //you do not want to remove this line, trust me or errors will pop up
 			main.currentState = new CharacterEnteredState ();
 		}
 	}

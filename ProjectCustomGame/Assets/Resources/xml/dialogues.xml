@@ -4,9 +4,9 @@
 	<Dialogues>
 		<Dialog>
 			<Id>pergunta</Id>
-			<Message>Você sabe o que eu quero?</Message>
+			<Message>Oi Eu Sou Goku, Quem você escolhe para me ajudar?</Message>
 			<IdScene>scene2</IdScene>
-			<IdCharacter>jailson</IdCharacter>
+			<IdCharacter>goku</IdCharacter>
 			<NextDialog>
 				<value>opcao1</value>
 				<value>opcao2</value>
@@ -16,7 +16,7 @@
 
 		<Dialog>
 			<Id>opcao1</Id>
-			<Message>a) Relaxar</Message>
+			<Message>a) Vegeta</Message>
 			<NextDialog>
 				<value>respostaCerta</value>
 			</NextDialog>
@@ -24,7 +24,7 @@
 
 		<Dialog>
 			<Id>opcao2</Id>
-			<Message>b) Estudar</Message>
+			<Message>b) Kuririn</Message>
 			<NextDialog>
 				<value>respostaErrada</value>
 			</NextDialog>
@@ -32,7 +32,7 @@
 
 		<Dialog>
 			<Id>opcao3</Id>
-			<Message>c) Comer paçoca</Message>
+			<Message>c) Yancha</Message>
 			<NextDialog>
 				<value>respostaEstranha</value>
 			</NextDialog>
@@ -40,17 +40,17 @@
 
 		<Dialog>
 			<Id>respostaCerta</Id>
-			<Message>Resposta Certa! </Message>
+			<Message>Resposta Certa verme Insolente! </Message>
 			<NextDialog>
 				<value>pergunta</value>
 			</NextDialog>
-			<IdCharacter>temer</IdCharacter>
+			<IdCharacter>vegeta</IdCharacter>
 			<IdScene>scene1</IdScene>
 		</Dialog>
 
 		<Dialog>
 			<Id>respostaErrada</Id>
-			<Message>Resposta Errada! </Message>
+			<Message>Acho que ele morreu! </Message>
 			<NextDialog>
 				<value>pergunta</value>
 			</NextDialog>
@@ -58,13 +58,13 @@
 
 		<Dialog>
 			<Id>respostaEstranha</Id>
-			<Message>Kkk eae men! </Message>
+			<Message>Cade ele? </Message>
 			<NextDialog>
 				<value>impacto1</value>
 				<value>impacto2</value>
 				<value>impacto3</value>
 			</NextDialog>
-			<IdCharacter>jailson</IdCharacter>
+			<IdCharacter>goku</IdCharacter>
 		</Dialog>
 
 		<Dialog>
@@ -96,13 +96,13 @@
 
 		<Dialog>
 			<Id>intervalo</Id>
-			<Message>E Agora! </Message>
+			<Message>Verme! </Message>
 			<NextDialog>
 				<value>1</value>
 				<value>2</value>
 				<value>3</value>
 			</NextDialog>
-			<IdCharacter>temer</IdCharacter>
+			<IdCharacter>vegeta</IdCharacter>
 			<IdScene>scene1</IdScene>
 
 		</Dialog>
@@ -110,7 +110,7 @@
 		<Dialog>
 			<Id>1</Id>
 			<Message>resultado 1</Message>
-			<IdCharacter>jailson</IdCharacter>
+			<IdCharacter>goku</IdCharacter>
 			<NextDialog>
 				<value>pergunta</value>
 			</NextDialog>
@@ -131,6 +131,5 @@
 				<value>pergunta</value>
 			</NextDialog>
 		</Dialog>
-
 	</Dialogues>
 </DialoguesCollection>

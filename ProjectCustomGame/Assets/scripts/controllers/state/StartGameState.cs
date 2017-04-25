@@ -19,6 +19,7 @@ using System;
 using UnityEngine;
 using NatanielSoaresRodrigues.ProjectCustomGame.Models.Manager;
 using NatanielSoaresRodrigues.ProjectCustomGame.Utils;
+using System.Diagnostics;
 
 namespace NatanielSoaresRodrigues.ProjectCustomGame.Controllers.State
 {
@@ -30,7 +31,9 @@ namespace NatanielSoaresRodrigues.ProjectCustomGame.Controllers.State
 		bool lastFinsih = false;
 
 		public override void execute(MainController main){
-			Debug.Log ("Started the state");
+			UnityEngine.Debug.Log ("Started the state");
+			var d1 = Stopwatch.StartNew ();
+
 
 		
 			//disable dialog
@@ -48,9 +51,9 @@ namespace NatanielSoaresRodrigues.ProjectCustomGame.Controllers.State
 			playAnimationScene = playAnimation(main.sceneManager);
 
 			if (playAnimationScene) {
-				main.backgroundImage.GetComponent<Animator> ().enabled = true;
-				main.backgroundImage.GetComponent<AnimationEventTrigger> ().finishAnim += finishSceneAnimation;
-				main.backgroundImage.GetComponent<Animator> ().Play ("sceneAnimationExit");
+				main.backgroundImageAnimator.enabled = true;
+				main.backgroundImageAnimatorEventTrigger.finishAnim += finishSceneAnimation;
+				main.backgroundImageAnimator.Play ("sceneAnimationExit");
 			} else {
 				lastFinsih = true;
 			}
@@ -60,16 +63,17 @@ namespace NatanielSoaresRodrigues.ProjectCustomGame.Controllers.State
 			playAnimationChar = playAnimation(main.characterManager, main.characterNameText);
 
 			if (playAnimationChar) {
-				main.characterImage.GetComponent<Animator> ().enabled = true;
-				main.characterImage.GetComponent<AnimationEventTrigger> ().finishAnim += finishCharacterAnimation;
-				main.characterImage.GetComponent<Animator> ().Play ("characterAnimationExit");
+				main.characterImageAnimator.enabled = true;
+				main.characterImageAnimationEventTrigger.finishAnim += finishCharacterAnimation;
+				main.characterImageAnimator.Play ("characterAnimationExit");
 			} else {
 				lastFinsih = true;
 			}
 
 			if(!playAnimationChar && !playAnimationScene)
 				OnFinishState (new EventArgs());
-
+			
+			UnityEngine.Debug.Log("Tempo: "+d1.ElapsedMilliseconds.ToString("0 ms"));
 		}
 
 		bool playAnimation(MyObjectManager manager)
@@ -109,8 +113,8 @@ namespace NatanielSoaresRodrigues.ProjectCustomGame.Controllers.State
 		}
 
 		public override void nextState (MainController main){
-			main.characterImage.GetComponent<AnimationEventTrigger>().finishAnim -= finishCharacterAnimation; //you do not want to remove this line, trust me or errors will pop up
-			main.backgroundImage.GetComponent<AnimationEventTrigger>().finishAnim -= finishSceneAnimation; //you do not want to remove this line, trust me or errors will pop up
+			main.characterImageAnimationEventTrigger.finishAnim -= finishCharacterAnimation; //you do not want to remove this line, trust me or errors will pop up
+			main.backgroundImageAnimatorEventTrigger.finishAnim -= finishSceneAnimation; //you do not want to remove this line, trust me or errors will pop up
 			main.currentState = new ShowSceneState ();
 		}
 

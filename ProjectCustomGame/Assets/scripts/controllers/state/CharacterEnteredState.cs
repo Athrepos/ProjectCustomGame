@@ -44,10 +44,10 @@ namespace NatanielSoaresRodrigues.ProjectCustomGame.Controllers.State
 			//new character to select and overrite previous character
 			main.characterImage.sprite = main.characterManager.loadImage();
 			main.characterNameText.SetActive(true);
-			main.characterNameText.GetComponentInChildren<Text>().text = character.Name;
-			main.characterImage.gameObject.GetComponent<AnimationEventTrigger>().finishAnim += finishCharacterAnimation;
-			main.characterImage.GetComponent<Animator> ().enabled = true;
-			main.characterImage.GetComponent<Animator> ().Play("characterAnimation");
+			main.characterNameTextText.text = character.Name;
+			main.characterImageAnimationEventTrigger.finishAnim += finishCharacterAnimation;
+			main.characterImageAnimator.enabled = true;
+			main.characterImageAnimator.Play("characterAnimation");
 
 			Debug.Log (character.Name);
 		}
@@ -58,7 +58,7 @@ namespace NatanielSoaresRodrigues.ProjectCustomGame.Controllers.State
 		}
 
 		public override void nextState(MainController main){
-			main.characterImage.GetComponent<AnimationEventTrigger>().finishAnim -= finishCharacterAnimation; //you do not want to remove this line, trust me or errors will pop up
+			main.characterImageAnimationEventTrigger.finishAnim -= finishCharacterAnimation; //you do not want to remove this line, trust me or errors will pop up
 			main.currentState = new ShowMessageState ();
 		}
 

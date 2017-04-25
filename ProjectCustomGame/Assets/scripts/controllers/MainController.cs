@@ -21,6 +21,7 @@ using NatanielSoaresRodrigues.ProjectCustomGame.Objs;
 using System;
 using NatanielSoaresRodrigues.ProjectCustomGame.Models.Manager;
 using NatanielSoaresRodrigues.ProjectCustomGame.Controllers.State;
+using System.Diagnostics;
 
 namespace NatanielSoaresRodrigues.ProjectCustomGame.Controllers
 {
@@ -34,13 +35,20 @@ namespace NatanielSoaresRodrigues.ProjectCustomGame.Controllers
 
 		public GameObject buttons;
 		public Button[] optionButtons { get; private set;}
+		public Text[] textButtons { get; private set;}
 
 		public ClickUIObject dialogBoxClick;
+
 		public Image characterImage;
-
+		public Animator characterImageAnimator { get; private set; }
+		public AnimationEventTrigger characterImageAnimationEventTrigger { get; private set; }
 		public GameObject characterNameText;
-		public GameObject backgroundImage;
+		public Text characterNameTextText { get; private set;}
 
+		public GameObject backgroundImage;
+		public Animator backgroundImageAnimator { get; private set; }
+		public AnimationEventTrigger backgroundImageAnimatorEventTrigger { get; private set;}
+		public Renderer backgroundImageRenderer { get; private set;}
 
 		public StateGame currentState;
 
@@ -49,18 +57,32 @@ namespace NatanielSoaresRodrigues.ProjectCustomGame.Controllers
 
 		// Use this for initialization
 		void Start () {
-
+			
+			//var d1 = Stopwatch.StartNew ();
 			canSelect = false;
 
+			backgroundImageAnimator = backgroundImage.GetComponent<Animator> ();
+			backgroundImageAnimatorEventTrigger = backgroundImage.GetComponent<AnimationEventTrigger> ();
+			backgroundImageRenderer = backgroundImage.GetComponent<Renderer> ();
+
+			characterImageAnimator = characterImage.GetComponent<Animator> ();
+			characterImageAnimationEventTrigger = characterImage.GetComponent<AnimationEventTrigger> ();
+			characterNameTextText = characterNameText.GetComponentInChildren<Text> ();
+
 			typewriterScript = FindObjectOfType<TypewriterScript> ();
+
 			optionButtons = buttons.GetComponentsInChildren<Button> ();
+			textButtons = buttons.GetComponentsInChildren<Text> ();
+
 			dialogBoxClick.clickUI += c_clickDialog;
 
-			//constrollers
+			//managers
 			sceneManager = new ScenesManager();
 			characterManager = new CharacterManager ();
 			dialogManager = new DialogManager (c_showDialogResponse);
 			dialogManager.initialize (); //initialize the dialg system
+
+			//print("Tempo: "+d1.ElapsedMilliseconds.ToString("0 ms"));
 
 		}
 
@@ -98,7 +120,7 @@ namespace NatanielSoaresRodrigues.ProjectCustomGame.Controllers
 			try {
 				dialogManager.selectOption (option);
 			} catch (Exception ex) {
-				Debug.Log (ex.Message);
+				UnityEngine.Debug.Log (ex.Message);
 			}
 		}
 
@@ -110,7 +132,7 @@ namespace NatanielSoaresRodrigues.ProjectCustomGame.Controllers
 			try {
 				dialogManager.checkDialog ();
 			} catch (Exception ex) {
-				Debug.Log (ex.Message);
+				UnityEngine.Debug.Log (ex.Message);
 			}
 		}
 		

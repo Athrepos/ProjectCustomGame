@@ -1,5 +1,4 @@
-﻿/*
-   The MIT License (MIT)
+The MIT License (MIT)
 
 Copyright (c) 2017 Nataniel Soares Rodrigues
 
@@ -19,30 +18,3 @@ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-*/
-
-using System;
-
-namespace NatanielSoaresRodrigues.ProjectCustomGame.Controllers.State
-{
-	public delegate void finishStateHandler(object source, EventArgs e);
-	public abstract class StateGame  {
-
-		public event finishStateHandler finishState;
-
-		public abstract void execute(MainController main);
-
-		public abstract void nextState (MainController main);
-
-
-		protected virtual void OnFinishState(EventArgs e)
-		{
-			//finish the state
-
-			if (finishState != null)
-				finishState (this, e);
-		}
-	}
-
-}

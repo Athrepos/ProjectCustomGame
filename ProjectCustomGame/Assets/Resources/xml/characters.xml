@@ -1,16 +1,9 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
-
-<CharactersCollection>
+﻿<CharactersCollection>
 	<Characters>
 		<Character>
 			<Id>goku</Id>
-			<Name>Son Goku</Name>
+			<Name>Goku</Name>
 			<CharacterImage>goku</CharacterImage>
-		</Character>
-		<Character>
-			<Id>vegeta</Id>
-			<Name>Vegeta</Name>
-			<CharacterImage>vegeta</CharacterImage>
 		</Character>
 	</Characters>
 </CharactersCollection>

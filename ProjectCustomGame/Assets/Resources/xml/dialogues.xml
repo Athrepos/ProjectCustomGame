@@ -1,135 +1,126 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-
 <DialoguesCollection>
 	<Dialogues>
+
 		<Dialog>
-			<Id>pergunta</Id>
-			<Message>Oi Eu Sou Goku, Quem você escolhe para me ajudar?</Message>
-			<IdScene>scene2</IdScene>
+			<Id>primeirodialogo</Id>
+			<Message>Olá Mundo, Olá Mundo, Olá Mundo, Olá Mundo, Olá Mundo, Olá Mundo, Olá Mundo, Olá Mundo, Olá Mundo, Olá Mundo, Olá Mundo, Olá Mundo, Olá Mundo, Olá Mundo, </Message>
 			<IdCharacter>goku</IdCharacter>
+			<IdScene>cena2</IdScene>
 			<NextDialog>
-				<value>opcao1</value>
-				<value>opcao2</value>
-				<value>opcao3</value>
+				<value>segundoDialogo</value>
 			</NextDialog>
 		</Dialog>
 
 		<Dialog>
-			<Id>opcao1</Id>
-			<Message>a) Vegeta</Message>
+			<Id>segundoDialogo</Id>
+			<Message>este é o segundo diálogo</Message>
+			<IdCharacter>goku</IdCharacter>
+			<IdScene>cena2</IdScene>
 			<NextDialog>
-				<value>respostaCerta</value>
+				<value>primeiraOpcao</value>
+				<value>segundaOpcao</value>
+				<value>terceiraOpcao</value>
 			</NextDialog>
 		</Dialog>
 
 		<Dialog>
-			<Id>opcao2</Id>
-			<Message>b) Kuririn</Message>
+			<Id>primeiraOpcao</Id>
+			<Message>Está é a opção 1</Message>
 			<NextDialog>
-				<value>respostaErrada</value>
+				<value>respostaOpcao1</value>
 			</NextDialog>
 		</Dialog>
 
 		<Dialog>
-			<Id>opcao3</Id>
-			<Message>c) Yancha</Message>
+			<Id>respostaOpcao1</Id>
+			<Message>está é a resposta para a opção 1</Message>
 			<NextDialog>
-				<value>respostaEstranha</value>
+				<value>selecionaImpact</value>
+			</NextDialog>
+			<Impact>impacto1</Impact>
+
+		</Dialog>
+
+
+		<Dialog>
+			<Id>segundaOpcao</Id>
+			<Message>Está é a opção 2</Message>
+			<NextDialog>
+				<value>respostaOpcao2</value>
+			</NextDialog>
+
+		</Dialog>
+
+		<Dialog>
+			<Id>respostaOpcao2</Id>
+			<Message>está é a resposta para a opção 2</Message>
+			<NextDialog>
+				<value>selecionaImpact</value>
+			</NextDialog>
+			<Impact>impacto2</Impact>
+		</Dialog>
+
+		<Dialog>
+			<Id>terceiraOpcao</Id>
+			<Message>Está é a opção 3</Message>
+			<NextDialog>
+				<value>respostaOpcao3</value>
 			</NextDialog>
 		</Dialog>
 
 		<Dialog>
-			<Id>respostaCerta</Id>
-			<Message>Resposta Certa verme Insolente! </Message>
+			<Id>respostaOpcao3</Id>
+			<Message>está é a resposta para a opção 3</Message>
 			<NextDialog>
-				<value>pergunta</value>
+				<value>selecionaImpact</value>
 			</NextDialog>
-			<IdCharacter>vegeta</IdCharacter>
-			<IdScene>scene1</IdScene>
+			<Impact>impacto3</Impact>
 		</Dialog>
 
-		<Dialog>
-			<Id>respostaErrada</Id>
-			<Message>Acho que ele morreu! </Message>
-			<NextDialog>
-				<value>pergunta</value>
-			</NextDialog>
-		</Dialog>
+
+
+
+
+
+
 
 		<Dialog>
-			<Id>respostaEstranha</Id>
-			<Message>Cade ele? </Message>
+			<Id>selecionaImpact</Id>
+			<Message>O proximo dialogo sera o impact</Message>
 			<NextDialog>
 				<value>impacto1</value>
 				<value>impacto2</value>
 				<value>impacto3</value>
 			</NextDialog>
-			<IdCharacter>goku</IdCharacter>
 		</Dialog>
 
 		<Dialog>
 			<Id>impacto1</Id>
-			<Message>resposta 1</Message>
+			<Message>Este o resultado do imapcto 1</Message>
 			<NextDialog>
-				<value>intervalo</value>
+				<value>primeirodialogo</value>
 			</NextDialog>
-			<Impact>1</Impact>
 		</Dialog>
 
 		<Dialog>
 			<Id>impacto2</Id>
-			<Message>resposta 2</Message>
+			<Message>Este o resultado do imapcto 2</Message>
 			<NextDialog>
-				<value>intervalo</value>
+				<value>primeirodialogo</value>
 			</NextDialog>
-			<Impact>2</Impact>
 		</Dialog>
 
 		<Dialog>
 			<Id>impacto3</Id>
-			<Message>resposta 3</Message>
+			<Message>Este o resultado do imapcto 3</Message>
 			<NextDialog>
-				<value>intervalo</value>
-			</NextDialog>
-			<Impact>3</Impact>
-		</Dialog>
-
-		<Dialog>
-			<Id>intervalo</Id>
-			<Message>Verme! </Message>
-			<NextDialog>
-				<value>1</value>
-				<value>2</value>
-				<value>3</value>
-			</NextDialog>
-			<IdCharacter>vegeta</IdCharacter>
-			<IdScene>scene1</IdScene>
-
-		</Dialog>
-
-		<Dialog>
-			<Id>1</Id>
-			<Message>resultado 1</Message>
-			<IdCharacter>goku</IdCharacter>
-			<NextDialog>
-				<value>pergunta</value>
+				<value>primeirodialogo</value>
 			</NextDialog>
 		</Dialog>
 
-		<Dialog>
-			<Id>2</Id>
-			<Message>resultado 2</Message>
-			<NextDialog>
-				<value>pergunta</value>
-			</NextDialog>
-		</Dialog>
 
-		<Dialog>
-			<Id>3</Id>
-			<Message>resultado 3</Message>
-			<NextDialog>
-				<value>pergunta</value>
-			</NextDialog>
-		</Dialog>
+
+
 	</Dialogues>
+
 </DialoguesCollection>

@@ -38,13 +38,36 @@ namespace NatanielSoaresRodrigues.ProjectCustomGame.Utils
 		private string fullText;
 		private string currentText = "";
 		Text textBox;
+		public ClickUIObject dialogBoxClick;
+		bool writing = false;
+		Coroutine typeWriterCorroutine;
 
+		void Start(){
+			dialogBoxClick.clickUI += c_clickDialog;
+		}
+
+		void c_clickDialog(object sender, EventArgs e){
+			//click to check the dialog system
+			Debug.Log("Clicou Typescript");
+			Debug.Log (writing);
+			TerminateTypeWriter ();
+		}
+
+		public void TerminateTypeWriter(){
+			if (writing) {
+				StopCoroutine (typeWriterCorroutine);
+				textBox.text = fullText;
+				OnFinishTypewriter (new EventArgs());
+			}
+
+
+		}
 
 		public void showMessage(string message)
 		{
-			
+			writing = true;
 			this.fullText = message;
-			StartCoroutine (ShowText());
+			typeWriterCorroutine = StartCoroutine (ShowText());
 		}
 
 		public void showAllMessage()
@@ -60,11 +83,11 @@ namespace NatanielSoaresRodrigues.ProjectCustomGame.Utils
 		}
 
 		IEnumerator ShowText(){
+			
 			for (int i = 0; i < fullText.Length+1; i++) {
 				currentText = fullText.Substring (0, i);
 
 				textBox.text = currentText;
-
 				yield return new WaitForSeconds (delay);
 			}
 			OnFinishTypewriter (new EventArgs());
@@ -74,7 +97,7 @@ namespace NatanielSoaresRodrigues.ProjectCustomGame.Utils
 		protected virtual void OnFinishTypewriter(EventArgs e)
 		{
 			//show the message to the view
-
+			writing= false;
 			if (finishTypewriter != null)
 				finishTypewriter (this, e);
 		}

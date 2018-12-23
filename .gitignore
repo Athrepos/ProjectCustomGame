@@ -1,4 +1,10 @@
-/[Ll]ibrary/
+/ProjectCustomGame/Library
+/ProjectCustomGame/Temp
+/ProjectCustomGame/obj
+/ProjectCustomGame/build
+/ProjectCustomGame/builds
+/ProjectCustomGame/Build
+/ProjectCustomGame/Builds
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
@@ -17,6 +23,7 @@ ExportedObj/
 *.pidb
 *.booproj
 *.svd
+*.meta
 
 
 # Unity3D generated meta files

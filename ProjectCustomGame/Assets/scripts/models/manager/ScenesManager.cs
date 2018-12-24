@@ -24,11 +24,16 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 using NatanielSoaresRodrigues.ProjectCustomGame.Xml;
 using UnityEngine;
 using NatanielSoaresRodrigues.ProjectCustomGame.Objs;
+using System;
 
 namespace NatanielSoaresRodrigues.ProjectCustomGame.Models.Manager
 {
 	public class ScenesManager : MyObjectManager
 	{
+		public string xmlFileName {
+			get;
+			set;
+		}
 		public Scene CurrentScene {
 			get{ 
 				return current as Scene;
@@ -37,9 +42,15 @@ namespace NatanielSoaresRodrigues.ProjectCustomGame.Models.Manager
 		}
 
 
-		public ScenesManager() : base()
+
+		public ScenesManager(string xmlFileName) : base()
 		{
-			SceneContainer container =  new XmlManagement ("scenes", typeof(SceneContainer)).openFile () as SceneContainer;
+			//load the xml file
+			this.xmlFileName = xmlFileName;
+			if (string.IsNullOrEmpty (xmlFileName))
+				throw new Exception ("The xml file name needed to be seted");
+			
+			SceneContainer container =  new XmlManagement (xmlFileName, typeof(SceneContainer)).openFile () as SceneContainer;
 			mainList = container.scenes.ToArray ();
 		}
 

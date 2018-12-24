@@ -84,7 +84,7 @@ namespace NatanielSoaresRodrigues.ProjectCustomGame.Controllers
 			dialogBoxClick.clickUI += c_clickDialog;
 
 			//managers
-			sceneManager = new ScenesManager();
+			sceneManager = new ScenesManager("scenes");
 			characterManager = new CharacterManager ();
 			dialogManager = new DialogManager (c_showDialogResponse);
 			dialogManager.initialize (); //initialize the dialg system
